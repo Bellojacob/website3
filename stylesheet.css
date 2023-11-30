@@ -1,0 +1,54 @@
+h1 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 3em;
+    color: aliceblue;
+}
+
+nav {
+    display: flex;
+    justify-content: center; /* Align items horizontally in the center */
+    align-items: center; /* Align items vertically in the center */
+    text-align: center;
+    background-color: #1f113e;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 25px;
+    height: 75px;
+}
+
+nav a {
+    text-decoration: none;
+    font-size: 2em;
+    padding: .5em;
+    color: aliceblue;
+}
+
+body {
+    background: linear-gradient(to bottom,#1e0146,#4d42ff );
+    background-repeat:no-repeat ;
+    height: 100%;
+    margin: 0;
+    background-attachment: fixed;
+}
+
+#about {
+    width: 50%; /* Occupies the left half of the screen */
+    color: white; /* Sets the text color to white */
+    float: left; /* Floats the section to the left */
+    padding: 0 20px; /* Adds padding to the left and right sides */
+    font-size: 1.8em; /* Increase font size slightly */
+}
+
+#image {
+    width: 20%; /* Decrease the image size to 20% of the screen */
+    float: right; /* Floats the image to the right */
+    margin-left: 10px; /* Adds a larger margin to the left side */
+}
+
+
+#projects {
+    clear: both;
+    font-size: 30px;
+}
+
