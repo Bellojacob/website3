@@ -40,15 +40,20 @@ body {
     font-size: 1.8em; /* Increase font size slightly */
 }
 
-#image {
-    width: 20%; /* Decrease the image size to 20% of the screen */
-    float: right; /* Floats the image to the right */
-    margin-left: 10px; /* Adds a larger margin to the left side */
+img {
+    max-width: 250px;
+    height: auto;
+    float: right;
+    padding: 5vw 10vw;
+    border-radius: 10px; /* Add border radius */
 }
+    
+
 
 
 #projects {
     clear: both;
     font-size: 30px;
 }
+
 
