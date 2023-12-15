@@ -156,7 +156,6 @@
     padding: 4% 2%;
     text-align: center;
     height: 84.5vh;
-    border: 10px solid rebeccapurple;
 
   }
   
@@ -230,7 +229,7 @@
     min-width: 80%;
     height: auto;
     border-radius: 15px;
-    margin-top: 20px; /* Add margin at the top */
+    margin-top: -50px; /* Add margin at the top */
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   }
 
