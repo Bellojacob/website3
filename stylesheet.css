@@ -1,63 +1,522 @@
-h1 {
-    text-align: center;
-    font-weight: bold;
-    font-size: 3em;
-    color: aliceblue;
-}
-
-h1 a {
-    text-decoration: none;
-}
-
-nav {
-    display: flex;
-    justify-content: center; /* Align items horizontally in the center */
-    align-items: center; /* Align items vertically in the center */
-    text-align: center;
-    background-color: #1f113e;
-    max-width: 800px;
-    margin: 0 auto;
-    border-radius: 25px;
-    height: 75px;
-}
-
-nav a {
-    text-decoration: none;
-    font-size: 2em;
-    padding: .5em;
-    color: aliceblue;
-}
-
-body {
-    background: linear-gradient(to bottom,#1e0146,#4d42ff );
-    background-repeat:no-repeat ;
-    height: 100%;
+* {
     margin: 0;
-    background-attachment: fixed;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    scroll-behavior: smooth;
+    
+  }
+  
+:root{
+  --marquee-width: 100vw;
+  --marquee-height: 20vh;
+  --marquee-elements: 6;
+  --marquee-elements-displayed: 5;
+  --marquee-element-width: calc(var(--marquee-width)/var(var(--marquee-elements-displayed)));
+  --marquee-animation-duration: calc(var(--marquee-el));
+
 }
 
-#about {
-    width: 50%; /* Occupies the left half of the screen */
-    color: white; /* Sets the text color to white */
-    float: left; /* Floats the section to the left */
-    padding: 0 20px; /* Adds padding to the left and right sides */
-    font-size: 1.8em; /* Increase font size slightly */
-}
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2%;
+    transition: all 0.4s ease;
+    background: #fff; /* Set the background color to white */
+    z-index: 1000;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  nav.sticky {
+    padding: 2px 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  nav .nav-content {
+    height: 100%;
+    max-width: 99%;
+    
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  nav .logo a {
+    font-weight: 500;
+    font-size: 250%;
+    color: black;
+  }
+  
+  nav.sticky .logo a {
+    color: #fff;
+  }
+  
+  .nav-content .nav-links {
+    display: flex;
+  }
+  
+  .nav-content .nav-links li {
+    list-style: none;
+    margin: 0 8px;
+  }
+  
+  .nav-links li a {
+    text-decoration: none;
+    color: #0E2431;
+    font-size: 150%;
+    font-weight: 500;
+    padding: 10px 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #4070f4;
+  }
+  
+  nav.sticky .nav-links li a {
+    color: #0E2431;
+    transition: all 0.4s ease;
+  }
+  
+  nav.sticky .nav-links li a:hover {
+    color: #4070f4;
+  }
 
-img {
-    max-width: 250px;
+  .iconNavbar{
+    font-size: 250%;
+    margin: 0 8px;
+    color: #000;
+    margin-top: -7px;
+  }
+  
+  .about-me-section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgb(2,0,36);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(23,11,78,1) 61%, rgba(0,0,142,1) 92%);
+    color: #fff;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    position: relative; /* Add position relative to create a positioning context */
+  }
+  
+  .myname {
+    font-size: 300%;
+    font-weight: bold;
+    color: #fff;
+
+  }
+  
+  .quote {
+    font-size: 150%;
+    color: #fff;
+    margin: 1.5% auto;
+
+    
+  }
+  
+  .button-container {
+    margin-top: 20px;
+    
+  }
+  
+.about-me-button {
+    padding: 1% 2%;
+    font-size: 130%;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white; /* Add border property with 'solid' style and 'white' color */
+    border-radius: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+
+
+}
+  
+  .about-me-button:hover {
+    background-color: white;
+    color: black;
+  }
+
+  
+
+
+  
+  .about-me-container {
+    background: white;
+    padding: 4% 2%;
+    text-align: center;
+    height: 84.5vh;
+    border: 10px solid rebeccapurple;
+
+  }
+  
+  .about-me-title {
+    font-size: 300%;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 4%;
+    margin-right: 37%;
+
+  }
+  
+  .about-me-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+  }
+  
+  .bio {
+    flex: 1;
+    text-align: left;
+    max-width: 48%;
+    margin-bottom: 5%;
+    font-size: 20px;
+
+  }
+
+  .resume-button {
+    background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    border-radius: 8px;
+    border-style: none;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    flex-shrink: 0;
+    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    height: 4rem;
+    width: 11rem;
+    padding: 0 1.6rem;
+    text-align: center;
+    text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+    transition: all .5s;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    margin: 5% 42%;
+   
+  }
+  
+  
+  .resume-button a:visited{
+    color: white;
+  }
+  
+  .resume-button:hover {
+    box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+    transition-duration: .1s;
+  }
+
+
+
+ 
+  
+  img {
+    flex: 1;
+    width: 90%; /* Make the image responsive within its container */
+    max-width: 400px; /* Set a maximum width for larger screens */
+    min-width: 80%;
     height: auto;
-    float: right;
-    padding: 5vw 10vw;
-    border-radius: 10px; /* Add border radius */
-}
+    border-radius: 15px;
+    margin-top: 20px; /* Add margin at the top */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+
+
+
+  .portfolio-container{
+    height: 160vh;
+    width: 100%;
+    margin-top: 4%;
+    text-align: center;
+    background-color: lightblue
+
+  }
+
+  .portfolio-container h1{
+    font-size: 250%;
+    text-align: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 15px;
+    color: white;
     
 
+  }
+
+  .box{
+    border-radius: 20px;
+    width: 30%;
+    height: 60%;
+    display: inline-block;
+    justify-content: space-between;
+    text-align: center;
+    margin: 2% auto;
+    margin-left: .5%;
+    margin-right: .5%;
+    background-color: #FBF7F5;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  }
+
+  .box img{
+    height: 40vh;
+    width: auto;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .box p{
+    font-size: 20px;
+    margin: 0 10px;
+  }
+
+  .iconProjects{
+    font-size: 60px;
+    margin-top: 30px;
+    color: black;
+  }
 
 
-#projects {
-    clear: both;
-    font-size: 30px;
+  .marquee{
+    background-color: white;
+    width: 100vw;
+    height: 20vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .marquee:before, .marquee:after {
+    position: absolute;
+    top: 0;
+    width: 10rem;
+    height: 100%;
+    content: "";
+    z-index: 1;
+  }
+
+  .marquee:before {
+    left: 0;
+    background: linear-gradient(to right, white 0%, transparent 100%);
+  }
+
+  .marquee:after {
+    right: 0;
+    background: linear-gradient(to left, white 0%, transparent 100%);
+  }
+
+  .marquee-content{
+    list-style: none;
+    height: 100%;
+    display: flex;
+    animation: scrolling 15s linear infinite;
+  }
+
+  @keyframes scrolling {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-200vw);
+    }
+    
+  }
+
+  .marquee-content:hover{
+    animation-play-state: paused;
+  }
+
+  .marquee-content li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25vw;
+    flex-shrink: 0;
+    font-size: 6rem;
+    white-space: nowrap;
+
+  }
+
+
+
+
+  .contactContainer{
+    padding: 2% 1%;
+    text-align: center;    
+    
+}
+
+  .contactHeading {
+    text-align: center;
+
+
+  }
+  
+  
+  
+  footer {
+    background: #333; /* Set the background color for the footer */
+    color: #fff; /* Set the text color for the footer */
+    padding: 20px;
+    text-align: center;
+
+  }
+  
+  .footer-content {
+    max-width: 1200px;
+    margin: auto;
+  }
+  .icon{
+    color: white;
+    font-size: 40px;
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 5px;
+    
+  }
+
+  .closingstatement1 {
+    margin-top: 4px;
+  }
+
+  .closingstatement2{
+    margin: 2px 0;
+  }
+
+
+/* CSS */
+.projects-button {
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 4rem;
+  padding: 0 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
 
+.projects-button a:visited{
+  color: white;
+}
+
+.projects-button:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
+
+
+  @media screen and (max-width: 600px) {
+    nav .logo a {
+      font-weight: 500;
+      font-size: 150%;
+      color: black;
+    }
+    .nav-links li a {
+      text-decoration: none;
+      color: #0E2431;
+      font-size: 100%;
+      font-weight: 500;
+      padding: 10px 2px;
+      transition: all 0.3s ease;
+    }
+    .quote {
+      font-size: 180%;
+      color: #fff;
+      margin: 1.5% auto;
+      text-align: center;
+  
+      
+    }
+    .about-me-container {
+      background: white;
+      padding: 4% 2%;
+      text-align: center;
+      height: 110vh;
+  
+    }
+    
+    .bio {
+      flex: 1;
+      
+      text-align: left;
+      max-width: 100%;
+      max-height: 25%;
+      margin-bottom: 5%;
+      font-size: 25px;
+  
+    }
+    img {
+      flex: 1;
+      width: 30%; /* Make the image responsive within its container */
+      max-width: 400px; /* Set a maximum width for larger screens */
+      
+      height: auto;
+      border-radius: 15px;
+      margin-top: 20px; /* Add margin at the top */
+  
+    }
+
+    #projects{
+      position: absolute;
+      bottom: -125%;
+      font-size: 250%;
+  
+    }
+    .portfolio-section {
+      height: 165vh;
+      display:block;
+      align-items: center;
+      justify-content: center;
+      background: #fff; /* Set the background color as needed */
+      color: #000; /* Set the text color as needed */
+      margin: 5% 0;
+      background-color: #3494e6;
+  
+    }
+    
+    .project-title {
+      margin: 1%;
+      padding: 1% .5%;
+      background: #fff; /* Set the background color for each portfolio item */
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle box shadow */
+      height: 300px;
+      width: 200px;
+      
+    }
+  
+    
+  
+
+  }
